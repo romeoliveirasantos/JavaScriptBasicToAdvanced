@@ -6,14 +6,37 @@
 
 
 const palavra = prompt("Insira a palavra:")
+let palavraReversa = ""
+let isPalindromo;
 
-for(i = 0; i < palavra.length; i++){
-  
-  let letras = palavra[i]
-  if(letras[i] === letras[i]){
-    alert("é um palíndromo")
-  }else{
-    alert(letras)
-  }
+for(i = palavra.length -1; i >=0;  i--){
 
+    palavraReversa += palavra[i]
+
+    palavra === palavraReversa? isPalindromo = true : isPalindromo  = false;
+   
+    console.log(palavra[i] + "\n" + palavraReversa[i])
 }
+
+if(isPalindromo === true){
+  alert(palavra +" é um palíndromo" + "\n" + palavra + "\n" + palavraReversa)
+ }else{
+  alert(palavra + " não é um palíndromo" + "\n" +  palavra + "\n"+ palavraReversa)
+ }
+
+ //resolução do instrutor
+
+ const palavra = prompt("Informe uma palavra:")
+ let palavraInvertida = ""
+
+ for(i = palavra.length -1; i >= 0; i--){
+    palavraInvertida += palavra[i]
+ }
+
+ if(palavra  === palavraInvertida){
+  alert(palavra  + " é um palíndromo!")
+ }else{
+  alert(palavra + " não é um palíndromo!\n\n" +  
+  palavra + " !== " + palavraInvertida
+  )
+ }
