@@ -1,7 +1,7 @@
 //array bidimensional - matrizes
 // é um array com uma ou mais dimenções
 // arrays bidimensionais se comportam como matriz
-
+const div = document.querySelector(".recebe")
 const array = [
   ["1° nível",
   "2° nível",
@@ -82,3 +82,19 @@ for(i = 0; i < alunos.length; i++){
     console.log(mostrarAlunos)
   }
 }
+
+console.log("Aluno: " + alunos[0][2][0] + "\n1° - B ")
+
+
+const series = []
+
+let adicionarAluno = series.push("Romário, 1° ano B")
+
+console.log(series)
+
+
+// adicionarAluno = prompt("Digite a o nome e a série\nExemplo: Nome, 1° ano C")
+
+series.push(adicionarAluno)
+
+console.log(series)
