@@ -44,9 +44,9 @@ do{
       break;
       case "5":
         function areaCirculo(raio = parseFloat(prompt("Insira o valor do raio:"))){
-          return alert("O valor da area do círculo é: " + (baseMaior + baseMenor) * altura / 2 )
+          return alert("O valor da area do círculo é: " + 3.14 * (raio * raio))
         }
-        areaTrapezio()
+        areaCirculo()
       break;
     case "6":
       alert("Saindo...")
