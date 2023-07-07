@@ -58,7 +58,7 @@ console.log(orcs)
 // o reduce faz uma iteração no array e vai atualizando os valores e acumula o valor total no final
 //elemento 1 -> elemento 2 -> etc
 
-reduce para somar todos os valores do nível do personagem, ele passa por todos os elementos e vai acumulando os valores para devolver o valor total no final
+//reduce para somar todos os valores do nível do personagem, ele passa por todos os elementos e vai acumulando os valores para devolver o valor total no final
 const nivelTotal = personagens.reduce(function(valorAcumulado,nomePersonagens){
   return valorAcumulado + nomePersonagens.nivel
 },0)
