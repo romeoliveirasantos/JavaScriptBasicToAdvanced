@@ -49,16 +49,16 @@ console.log(orcs)
 //método utilizando o filter
 //estamos utilizando o filter e passando como parâmetro uma função que retorna o nome do personagem
 //dentro dessa método filter, temos uma condicional para retornar só personagens que tenham a raçã "Orc"
-const personagensOrcs = personagens.filter(function(nomePersonagens){
-  return nomePersonagens.raca === "Orc"
-})
-console.log(personagensOrcs)
+// const personagensOrcs = personagens.filter(function(nomePersonagens){
+//   return nomePersonagens.raca === "Orc"
+// })
+// console.log(personagensOrcs)
 //......................................................
 //método reduce serve para transformar um array em outro valor, seja um novo array, um objeto, uma string ou qualquer outra coisa
 // o reduce faz uma iteração no array e vai atualizando os valores e acumula o valor total no final
 //elemento 1 -> elemento 2 -> etc
 
-//reduce para somar todos os valores do nível do personagem, ele passa por todos os elementos e vai acumulando os valores para devolver o valor total no final
+reduce para somar todos os valores do nível do personagem, ele passa por todos os elementos e vai acumulando os valores para devolver o valor total no final
 const nivelTotal = personagens.reduce(function(valorAcumulado,nomePersonagens){
   return valorAcumulado + nomePersonagens.nivel
 },0)
@@ -80,3 +80,25 @@ const racas = personagens.reduce(function(valorAcumulado,nomePersonagens){
 },{})
 
 console.log(racas)
+
+//treinando array de personagens
+const personagens = [
+  {nome:"Vholmor", nivel: 40, raca: "Humano",classe: "Mago"},
+  {nome:"Gloeder", nivel: 20, raca: "Humano",classe: "Selvagem"},
+  {nome:"Phusziz", nivel: 40, raca: "Morto-vivo",classe: "Necromante"}
+]
+
+//agrupando personagens por raça
+const raca = personagens.reduce(function(personagensPorRaca,personagens){
+  if(personagensPorRaca[personagens.raca]){
+    personagensPorRaca[personagens.raca].push(personagens)
+  }else{
+     personagensPorRaca[personagens.raca] = [personagens]
+  }
+  return personagensPorRaca
+},{})
+
+//foi criado dois novos arrays de objetos
+//1 dos arrays contem dois objetos da raça humana
+// o outro tem o objeto da raca morto vivo
+console.log(raca)
