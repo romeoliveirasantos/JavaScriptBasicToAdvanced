@@ -164,7 +164,7 @@ function exibirMenu(){
   return opcao
 }
 
-
+//função que executa o programa
 function executar(){
   let opcao = ""
 
@@ -197,4 +197,5 @@ function executar(){
   }while(opcao !== "6")
 }
 
+//chamando a função que executa o programa
 executar()
