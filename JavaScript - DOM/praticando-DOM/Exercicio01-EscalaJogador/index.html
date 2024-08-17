@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escalação de jogadores</title>
+  <script src="./index.js"></script>
+</head>
+<body>
+  <h1>Escalação</h1>
+  <label for="posicao-jogador">Qual a posição do jogador</label>
+  <input type="text" name="posicao-jogador" id="posicaoJogador">
+  <br>
+
+  <label for="nome-jogador">Qual o nome do jogador</label>
+  <input type="text" name="nome-jogador" id="nomeJogador">
+  <br>
+
+  <label for="camisa-jogador">Qual o número da camisa do jogador</label>
+  <input type="text" name="camisa-jogador" id="camisaJogador">
+  <br>
+  <br>
+
+ <button onclick="escalarJogador()">Escalar</button>
+ 
+<br>
+<br>
+ <section id="escalacao">Escalação</section>
+<br>
+<br>
+<hr>
+ <label for="numberToRemove">Número: </label>
+ <input type="text" name="numberToRemove" id="numberToRemove">
+ <button onclick="removerJogador()">Desescalar</button>
+</body>
+</html>
