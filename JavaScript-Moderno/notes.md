@@ -81,3 +81,86 @@ function createUser({name, job, parents}){ -> **desestruturando direto nos parâ
   }
 }
 ### Operador Spread
+Permite espalhar os elementos de um objeto iteravél (array, string, etc)
+Utiliza os três pontos: ...iterableObject
+pode ser usado para diferentes fins
+Exemplo:
+let str = 'Olá, mundo!'
+let arr =  [4,2,8,3,1]
+
+console.log(...str)// separa as letras O l á , M u n d o
+console.log(...arr)// separa os elementos 4 2 8 3 1
+Usado para:
+- passar vários parâmetros de uma única vez
+- clonar objetos iteráveis
+- fazer manipulação sem afetar o bojeto original
+- transformar strings em arrays
+const towns = ['Prontera', 'Maxera', 'Visera', 'Ledas', 'Loxus', 'Albert', 'Mathus']
+console.log(towns)
+console.log(...towns)
+console.log(...towns[0])
+
+const townsCopy = towns
+townsCopy.pop()
+townsCopy.pop()
+townsCopy.push('Juno')
+console.log({towns, townsCopy})
+
+const townsClone = [...towns]
+townsClone.push('Aldebaran')
+console.log({towns, townsCopy, townsClone})
+
+const townsObj = {...towns}
+const townsObjClone = {...townsObj}
+townsObjClone.test = 'Test'
+console.log({townsObj, townsObjClone})
+### Rest Params
+É uma técnica no JS que permite que uma função receba qualquer número de parâmetros
+Também permite manipular esses parâmetros como um array na definição da função (o que diferencia do objeto arguments)
+Exemplo: 
+function sum(...numbers){
+  return numbers.reduce((accum, num)=> accum + num, 0)
+}
+pode ser usado outro parâmetro junto ao rest param
+o rest param sempre tem que ser o último parâmetro.
+function sum(param,...numbers){
+  return numbers.reduce((accum, num)=> accum + num, 0)
+}
+### Encadeamento opcional
+- optional chaining
+é um operador que permite ler propriedades internas de uma cadeia
+de objetos sem que a validação de ada referência da cadeia seja realizada
+Permite acessar propriedades internas sem lançar erros quando uma propriedade é nulllish (null ou undefined)
+Funciona de forma similar ao encadeamento normal (operador .) porem é escrito com '?'
+Sintaxe:
+const user = {
+  name: 'Rome',
+  email: 'rome.qualquercois@hotmail.com',
+  adress:[
+    {
+      street:'rua 1',
+      number: 89
+    }
+  ],
+  age: 30,
+  phone:[{
+    countryCode: "+55",
+    ddd: '11',
+    number:'999999999'
+  }]
+}
+console.log(user?.adress?.[0]?.phone?.ddd?.number)
+O encadeamento acontece se a propriedade existir (?) -> é como se fosse uma pergunta (?existe? se existir, acesse!)
+em casos de array, podemos passar o '?' para verificar se a posição do array existe
+adress?.[4] -> verifica se existe elemento nessa posição.
+Serve para prevenir erros de cannot read null properties of null -> passa a ser apenas undefined
+### Operador de Coalescência Nula
+Nullish coalescing -> é um operador lógico que tem o funcionamento parecido com || e &&
+Utiliza dois pontos de interrogação "??"
+Retorna o operando do lado direito quando o operador do lado esquerdo é null ou undefined
+exemplo:
+const a = null
+const b = null
+const c = 'Não nulo'
+console.log(a ?? b ?? c) -> retorna o valor de c pois não é null ou undefined
+### Introdução aos módulos
