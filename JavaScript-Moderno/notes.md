@@ -164,3 +164,61 @@ const b = null
 const c = 'Não nulo'
 console.log(a ?? b ?? c) -> retorna o valor de c pois não é null ou undefined
 ### Introdução aos módulos
+Módulos são agrupamentos de códigos com funcionalidades distintas que podem ser compartilhados, adicionados ou removidos 
+dos softwares.
+- Por que utilizar módulos
+1. Manutenibilidade
+2. Namespacing
+3. Reusabilidade
+- Módulos no javascript
+1. CommonJS
+2. ES Modules
+### Módulos CommonJS
+exportando o script
+module.exports = nome do arquivo
+
+importando o script
+const import = require(caminho/do/arquivo)
+**CommonJs não é suportado por padrão nos navegadores, porém no node é a forma padrão de trabalhar com módulos**
+### ES modules
+Módulos nativos do javascript
+Podemos exportar utilizando a palavra reservada export antes de uma variável ou função
+Para importar podemos utilizar a palavra reservada import e chaves {} usando from "./caminho do arquivo"
+import {nome da função} from 'caminho do arquivo onde está a função/arquivo.extensão'
+**o script no HTML precisa ter o atributo type='module', pois por padrão navegadores não suportam módulos**
+### Tipos de exports no ESM
+- Nos ES Modules existem diferentes formas de se realizar o processo de importação e exportação. Eles podem ser divididos da seguinte forma:
+    - **Export Nomeado:** o nome da variável/função exportada deve ser o mesmo na hora da importação. A importação é sempre feita com `import { ... } from 'path/to/file'` (com chaves). A exportação pode ser feita de duas formas:
+        - Inline: na mesma linha da declaração da variável/função, utilizando `export const ...` ou `export function ...`.
+        - Não-inline: após a declaração da variável/função e utilizando `export { ... }` (com chaves).
+        
+        *Obs.: o export nomeado pode ser renomeado para evitar conflitos de nome utilizando o “as” na importação* `import { moduleA as newName } from './moduleA'`
+        
+    - **Export Default:** o nome da variável/função exportada não precisa ser seguido na hora da importação, pode ser usado qualquer nome. A importação é sempre feita com `import ... from 'path/to/file'` (sem chaves). A exportação pode ser feita de duas formas:
+        - Inline: na mesma linha da declaração da variável/função, utilizando `export default = ...`  ou `export default function ...`.
+        - Não-inline: após a declaração da variável/função e utilizando `export { ... }` (com chaves).
+- Uma outra diferença ainda mais importante que a possibilidade de renomear o módulo importado é que **os exports nomeados podem ser usados várias vezes no mesmo arquivo, enquanto o export default é apenas um por arquivo.**
+
+Export nomeado inline
+**export** function()
+import {functionName} from './nomedoarquivo'
+utilizando esse tipo não é possível renomear, só é possível utilizando o {function as newName}
+
+export default inline
+export default function()
+import functionName from './nomedoarquivo'
+
+o default só pode ter um export, já o nomeado pode ter mais de 1.
+O export default pode ser uma função anonima
+
+non-inline forma alternativa
+pode ser definido separadamente em qualquer parte do arquivo, não precisa ser na mesma linha
+
+export functionName()
+import {functionName} from './nomedoarquivo'
+
+export default functionName
+import functionName from './nomedoarquivo'
+
+pode usar apenas uma linha para importar tanto a nomeada quanto a default.
+import functionName, {functionName} from './nomedoarquivo'
