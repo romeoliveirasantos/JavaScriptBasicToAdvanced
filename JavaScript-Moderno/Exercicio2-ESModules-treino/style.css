@@ -1,0 +1,71 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+#header{
+  height: 100px;
+  width: 100wv;
+  background-color: #2232;
+}
+#headerNav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 2rem 0 2rem;
+}
+#profileUser{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 3rem;
+  background-color: rgb(43, 44, 44);
+  margin-top: 0.4rem;
+  font-size: 3rem;
+  cursor: pointer;
+}
+#navigationButtons{
+  display: flex;
+  gap: 2rem;
+}
+#navigationButtons button{
+  width: 7rem;
+  height: 2rem;
+  border: none;
+  background-color: #2232;
+  border-radius: 0.4rem;
+}
+#navigationButtons button:hover{
+ cursor: pointer; 
+  background-color: #ddd;
+}
+#mainSection{
+  display: flex;
+  justify-content: center;
+  margin: 4rem;
+}
+#userNameContainer{
+  width: 100vw;
+  height: 15rem;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;  
+}
+#userNameLabel{
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+#userNameInput{
+  height: 2rem;
+}
+#userNameBtn{
+  height: 2rem;
+  width: 6rem;
+  cursor: pointer;
+  font-family: sans-serif;
+}
