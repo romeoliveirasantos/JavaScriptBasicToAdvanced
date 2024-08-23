@@ -222,3 +222,51 @@ import functionName from './nomedoarquivo'
 
 pode usar apenas uma linha para importar tanto a nomeada quanto a default.
 import functionName, {functionName} from './nomedoarquivo'
+### NPM
+Gerenciador de pacotes do nodeJS.
+NPM - node package manager.
+Node é a ferramente que permite a execução do javascript fora do navegador.
+NPM é um gerenciador de módulos ou de pacotes - serve para ajudar a gerenciar esses módulos ou pacotes na aplicação.
+com NPM módulos podem ser compartilhados entre aplicações.
+NPM permite compartilhar módulos na internet, baixar módulos, e gerenciar módulos instalados no projeto.
+Open-source
+(dry) dont repeat yourself.
+Yarn é outra opção de gerenciador de pacotes para o node.
+As mais populares são NPM e Yarn, NPM sendo o principal que já vem com o node.
+NPM pode ser visto como 3 recursos que trabalham juntos
+- Ferramenta de linha de comando para executar NPM
+- Um repositório online de pacotes onde ficam hospedados os módulos que podemos baixar
+- O site npmjs.com onde podemos navegar pelos módulos existentes no repositório
+
+- npm init na pasta do projeto para iniciar
+- npm install nome do pacote - instala o pacote na aplicação
+
+importando módulo 
+const nomeModulo = require('nomeModulo')
+
+Dependencia de desenvolvimento 
+São utilizadas durante o desenvolvimento mas não são publicados em produção.
+npm install --save-dev nomePacote
+
+NPM também consegue instalar pacotes fora da dependencia, a nível global, fora do projeto (na máquina)
+npm install --global nomePacote
+
+**Como remover um pacote**
+npm uninstall nomePacote
+
+### Arquivos JSON
+JavaScript object notation é um formato de arquivo utilizado para trocar dados de forma facilitada e estruturada
+Utiliza sistema de chave-valor exemplo:
+é utilizado aspas para nomear as chaves "nome": "Romário"
+Tipos primitivos suportados para valores (string, number, boolean e null)
+{} -> para definir grupos de propriedades (objetos)
+[] -> para definir listas de dados (arrays)
+, -> separa propriedades
+"nome": "Romário",
+"cidade" : "São paulo"
+é muito utilizado para trocar dados entre diferentes sistemas e em arquivos de configuração.
+é amplamente utilizado na web e é suportado por várias linguagens além do javascript
+- Manipulando arquivos JSON no javascript
+JSON.parse() -> converte uma string para objeto json-compatible
+JSON.stringify() -> converte um objeto json-compatible para string
+
