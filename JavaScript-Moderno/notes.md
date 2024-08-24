@@ -270,3 +270,6 @@ Tipos primitivos suportados para valores (string, number, boolean e null)
 JSON.parse() -> converte uma string para objeto json-compatible
 JSON.stringify() -> converte um objeto json-compatible para string
 
+### NPX e scripts NPM
+NPX é um comando utilizado para executar bibliotecas pela linha de comando
+nem todos os pacotes terão executaveis.
