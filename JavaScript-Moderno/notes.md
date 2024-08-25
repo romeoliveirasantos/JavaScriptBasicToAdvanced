@@ -271,5 +271,15 @@ JSON.parse() -> converte uma string para objeto json-compatible
 JSON.stringify() -> converte um objeto json-compatible para string
 
 ### NPX e scripts NPM
-NPX é um comando utilizado para executar bibliotecas pela linha de comando
+- NPX é um comando utilizado para executar bibliotecas pela linha de comando
 nem todos os pacotes terão executaveis.
+da para identificar procurando por .bin na pasta node_modules ou na documentação do pacote
+sintaxe: npx nomeDoScript
+- script NPM serve para executr qualquer outro comando
+dentro do package.json no objeto scripts podemos adicionar qualquer atalho para o comando npx
+"scripts":{
+  "meuScriptNPM": "hello-world-npm"
+}
+podemos executar o próprio programa utilizando script.
+quando utiliza-se o script start não é necessário utilizar o run : npm start
+### Conhecendo o babel
