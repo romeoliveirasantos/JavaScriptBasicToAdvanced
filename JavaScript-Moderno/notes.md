@@ -283,3 +283,38 @@ dentro do package.json no objeto scripts podemos adicionar qualquer atalho para 
 podemos executar o próprio programa utilizando script.
 quando utiliza-se o script start não é necessário utilizar o run : npm start
 ### Conhecendo o babel
+- Babel é um compilador Javascript para Javascript
+ Compilador é uma ferramenta que permite converter o código escrito
+ em uma linguagem para outra linguagem.
+ O Babel é um conjunto de ferramenta que serve para converter código nas versões mais recentes do javascript para código
+ de versões mais antigas. a fim de torná-lo compatível com plataformas/browsers que não suportam as versões mais novas.
+ - Aguns recursos do Babel:
+ Transformação de sintaxe
+ Polyfill de recursos não existentes no ambiente alvo (preenche recursos do javascript moderno que não tem como serem implementadas nas versões antigas)
+ Transformação de código.
+ Etc...
+ mais informações em babeljs.io/
+ Instalando babel no projeto
+ npm i -D @babel/core @babel/cli @babel/preset-env
+ *-D é abreviação para --save-dev*
+ comando: npx babel "nomeDoArquivoASerConvertido.js"
+ comando: npx babel "nomeDoArquivoASerConvertido.js" --out-file novoArquivo.js -> salva a saída para um novo arquivo
+ comando: npx babel "nomeDoArquivoASerConvertido.js" --out-file novoArquivo.js --presets=@babel/preset-env -> converte o código para versões antigas e salva em um novo arquivo
+ -- Para executar o babel de forma global, em todos os arquivos js 
+ - criar pasta "src"
+ - os scripts devem estar dentro da pasta src
+ - utilizar comando: npx babel src --out-dir nomePasta --presets=@babel/preset-env -> converte todo o código dentro da pasta src e cria nova pasta e salva a saída.
+ o comando pode ser adicionado ao script NPM para facilitar a chamada
+ "babel" : "npx babel src --out-dir nomePasta --presets=@babel/preset-env"
+ comando: npm run babel
+ - Por padrão o babel tem um arquivo de configuração
+ babel.config.js
+ é necessário exportar um objeto
+ module.exports = {
+     presets: [
+     ["@babel/preset-env"]
+     ]
+ }
+ agora não é preciso passar "--presets=@babel/preset-env" no comando.
+ Para mais presets na documentação do babel.
+ ### Conhecendo Webpack
